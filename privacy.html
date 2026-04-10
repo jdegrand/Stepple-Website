@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stepple — Privacy Policy</title>
+  <meta name="description" content="Stepple Privacy Policy. Your data stays on your device." />
+  <link rel="icon" type="image/png" href="assets/icon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <img src="assets/icon.png" alt="Stepple icon" />
+        Stepple
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="terms.html">Terms</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="legal-page">
+    <a href="/" class="legal-back">&larr; Back to Stepple</a>
+
+    <h1>Privacy Policy</h1>
+    <p><strong>Effective date:</strong> April 9, 2026<br/>
+    <strong>App:</strong> Stepple<br/>
+    <strong>Developer:</strong> Joey DeGrand</p>
+
+    <p>This policy explains what information Stepple collects, how it is used, and your rights regarding that information.</p>
+
+    <h2>1. Data Stored on Your Device</h2>
+    <p>Stepple stores all app data locally on your device using Apple's SwiftData framework. This includes:</p>
+    <ul>
+      <li>Your virtual pet's name, species, and activity history</li>
+      <li>Daily fitness summaries derived from Apple Health (step counts, active calories, sleep hours, workout records, flights climbed, walking distance)</li>
+      <li>App preferences (calorie goal, background, customization settings)</li>
+      <li>Accolade and achievement progress</li>
+      <li>Lifetime activity totals and retirement history for each pet</li>
+    </ul>
+    <p>None of this data is transmitted to any server operated by the developer. All processing happens entirely on your device.</p>
+
+    <h2>2. Apple Health Data</h2>
+    <p>Stepple requests read-only access to the following Apple Health data types:</p>
+    <ul>
+      <li>Active Energy Burned</li>
+      <li>Step Count</li>
+      <li>Sleep Analysis</li>
+      <li>Workouts</li>
+      <li>Flights Climbed</li>
+      <li>Walking + Running Distance</li>
+    </ul>
+    <p>Stepple does <strong>not</strong> write any data to Apple Health. Health data is used solely to drive in-app pet mechanics and is never shared with third parties or used for advertising. Stepple does not transmit health data to any server.</p>
+    <p>You can revoke Health access at any time in <strong>Settings &rarr; Privacy &amp; Security &rarr; Health &rarr; Stepple</strong>.</p>
+
+    <h2>3. iCloud</h2>
+    <p>Stepple uses iCloud Key-Value Storage solely to persist a single anonymous token used for backup ownership verification. This token contains no personal information. It is not used for analytics or advertising.</p>
+    <p>If you subscribe to Stepple+, Apple manages your subscription and payment information directly. The developer does not receive or store your payment details.</p>
+
+    <h2>4. Backup Files</h2>
+    <p>If you use the manual backup feature, a signed backup file is saved to your device's local storage. Backups are cryptographically signed with a device-specific key derived from an anonymous token stored in your iCloud Key-Value Storage, which means a backup file can only be restored on devices that share the same iCloud account. This file is only transferred if you explicitly choose to export it (e.g. via AirDrop or Files). The developer has no access to these files.</p>
+
+    <h2>5. Subscription Data</h2>
+    <p>Stepple+ subscriptions are processed entirely by Apple via In-App Purchase. The developer receives only an anonymized transaction receipt to verify entitlement. No name, email, or payment information is shared with the developer.</p>
+
+    <h2>6. Diagnostic Logs</h2>
+    <p>Stepple writes diagnostic logs to your device to help troubleshoot bugs. These logs describe app behavior but do not contain your actual step counts, calorie totals, sleep hours, workout details, or other health values. Your pet's name is also excluded from logs.</p>
+    <p>Logs are kept for 7 days and then automatically deleted. When you export logs via <strong>Settings &rarr; Diagnostics &rarr; Export Diagnostic Logs</strong>, the data is encrypted before leaving the app. The exported file can only be read by the developer. Stepple does not transmit logs off your device automatically; you choose when and whether to share them.</p>
+
+    <h2>7. Analytics and Advertising</h2>
+    <p>Stepple does not use any third-party analytics SDK, advertising network, or tracking library. No data about your usage is collected by the developer or any third party through this app.</p>
+
+    <h2>8. Children</h2>
+    <p>Stepple is not directed at children under 13. The app does not knowingly collect personal information from children.</p>
+
+    <h2>9. Changes to This Policy</h2>
+    <p>If this policy changes materially, the updated version will be posted at this URL with a new effective date. Continued use of the app after such changes constitutes acceptance of the updated policy.</p>
+
+    <h2>10. Contact</h2>
+    <p>Questions about this policy can be directed to: <a href="mailto:support@stepple.fit">support@stepple.fit</a></p>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="mailto:support@stepple.fit">Contact</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 Joey DeGrand. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
