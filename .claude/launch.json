@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "stepple-website",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8080", "--directory", "/Users/jdegrand/Documents/Projects/Stepple/Stepple-Website"],
+      "port": 8080
+    }
+  ]
+}

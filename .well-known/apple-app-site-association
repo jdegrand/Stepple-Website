@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "8AG9SQW5U6.me.jdegrand.Stepple",
+          "8AG9SQW5U6.me.jdegrand.Stepple.dev"
+        ],
+        "components": [
+          { "/": "/r/*", "comment": "Referral deep link" }
+        ]
+      }
+    ]
+  }
+}
