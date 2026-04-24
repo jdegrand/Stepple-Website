@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stepple — Privacy Policy</title>
-  <meta name="description" content="Stepple Privacy Policy. Your data stays on your device." />
+  <meta name="description" content="Stepple Privacy Policy. Your data is private by default." />
   <link rel="icon" type="image/png" href="assets/icon.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -28,22 +28,29 @@
     <a href="/" class="legal-back">&larr; Back to Stepple</a>
 
     <h1>Privacy Policy</h1>
-    <p><strong>Effective date:</strong> April 20, 2026<br/>
+    <p><strong>Effective date:</strong> April 23, 2026<br/>
     <strong>App:</strong> Stepple<br/>
     <strong>Developer:</strong> Joey DeGrand</p>
 
     <p>This policy explains what information Stepple collects, how it is used, and your rights regarding that information.</p>
 
-    <h2>1. Health Data Stays on Your Device</h2>
+    <h2>1. Where Your Data Lives</h2>
     <p>Stepple stores all app data locally on your device using Apple's SwiftData framework. This includes:</p>
     <ul>
       <li>Your virtual pet's name, species, and activity history</li>
       <li>Daily fitness summaries derived from Apple Health (step counts, active calories, sleep hours, workout records, flights climbed, walking distance)</li>
-      <li>App preferences (calorie goal, background, customization settings)</li>
+      <li>App preferences (daily goal, background, customization settings)</li>
       <li>Accolade and achievement progress</li>
       <li>Lifetime activity totals and retirement history for each pet</li>
     </ul>
-    <p>Your health data, pet data, and app preferences are never transmitted to any server operated by the developer. All processing of your activity and pet state happens entirely on your device.</p>
+    <p>By default, your health data, pet data, and app preferences are not transmitted to any server operated by the developer, and all automatic processing of your activity and pet state happens entirely on your device.</p>
+    <p>Stepple may offer optional features that, if you turn them on, transmit data you choose to Apple's iCloud services. These features are opt-in and the exact data they share is disclosed before you enable them. They include:</p>
+    <ul>
+      <li><strong>Backup ownership verification</strong> (Section 4) &mdash; a single anonymous token.</li>
+      <li><strong>The referral program</strong> (Section 3) &mdash; only if you visit Settings &rarr; Refer a Friend.</li>
+      <li><strong>Optional social features</strong> such as leaderboards, shared goals, or activity comparisons. If you enable one of these features, it may share information the app stores about your activity and your virtual pet &mdash; including (without limitation) activity values read from Apple Health, derived progress metrics, virtual pet state, achievement and accolade data, and connection identifiers &mdash; through Apple's CloudKit service with members of leaderboards you explicitly join. The exact data shared by each feature will be clearly described before you enable it. Any such feature will be off by default and can be disabled at any time in Settings.</li>
+    </ul>
+    <p>No data described in this policy is ever sold, used for advertising, or linked to your name, email, or Apple ID.</p>
 
     <h2>2. Apple Health Data</h2>
     <p>Stepple requests read-only access to the following Apple Health data types:</p>
@@ -55,13 +62,16 @@
       <li>Flights Climbed</li>
       <li>Walking + Running Distance</li>
     </ul>
-    <p>Stepple does <strong>not</strong> write any data to Apple Health. Health data is used solely to drive in-app pet mechanics and is never shared with third parties or used for advertising. Stepple does not transmit health data to any server.</p>
+    <p>Stepple does <strong>not</strong> write any data to Apple Health. Health data is used primarily to drive in-app pet mechanics and is never sold, shared with advertising networks, or used for advertising purposes. Health data transmission is limited to optional features you explicitly enable (see Section 1); no automatic transmission occurs.</p>
     <p>You can revoke Health access at any time in <strong>Settings &rarr; Privacy &amp; Security &rarr; Health &rarr; Stepple</strong>.</p>
 
     <h2>3. iCloud Services</h2>
     <p>Stepple uses three Apple iCloud services:</p>
     <p><strong>iCloud Key-Value Storage</strong> &mdash; stores a single anonymous token used for backup ownership verification. This token contains no personal information.</p>
-    <p><strong>CloudKit (referral program, optional)</strong> &mdash; creating a referral code is entirely optional. Stepple only creates a CloudKit record if you visit <strong>Settings &rarr; Refer a Friend</strong>. If you never visit that page, no CloudKit record is ever created. When a code does exist, the stored record contains only your anonymous referral code, your anonymous iCloud user ID, and a count of successful redemptions &mdash; no health data, pet data, names, or other personal information. To delete your referral code from Apple's servers, email <a href="mailto:support@stepple.fit">support@stepple.fit</a> and the developer will remove it manually.</p>
+    <p><strong>CloudKit (optional features)</strong> &mdash; Stepple uses Apple's CloudKit database for optional features you choose to enable.</p>
+    <p><strong>Referral program:</strong> if you visit <strong>Settings &rarr; Refer a Friend</strong>, Stepple creates a record containing only your anonymous referral code, your anonymous iCloud user ID, and a count of successful redemptions. If you never visit that page, no CloudKit record is created by the referral program.</p>
+    <p><strong>Optional social features</strong> (such as leaderboards or shared goals), if enabled, may store information the app has about your activity and virtual pet &mdash; including (without limitation) activity values, progress metrics, pet state, achievement and accolade data, and connection identifiers &mdash; in CloudKit records shared through Apple's CloudKit service with members of leaderboards you have explicitly joined. The specific data stored will be disclosed at the point of enabling each feature. Data stored in CloudKit is subject to Apple's CloudKit security model and privacy practices.</p>
+    <p>To delete your CloudKit data, email <a href="mailto:support@stepple.fit">support@stepple.fit</a> and the developer will remove it manually.</p>
     <p><strong>Apple StoreKit</strong> &mdash; if you subscribe to Stepple+, Apple manages your subscription and payment information directly. The developer does not receive or store your payment details.</p>
     <p>None of these services is used for analytics or advertising. All are operated by Apple under their privacy policies.</p>
 
@@ -80,7 +90,7 @@
     <p>When such data is sent, it is tied only to a random identifier generated on your device and is not linked to your name, email, Apple ID, or health data. No health or fitness values are ever included. No pet names are ever included.</p>
     <p>This data may be processed directly by the developer or by third-party analytics, diagnostics, and paywall service providers acting as data processors under the developer's instructions. The current list of processors is maintained at <a href="processors.html">stepple.fit/processors</a>.</p>
     <p>Stepple does not use any advertising network, and no data described in this policy is used for advertising.</p>
-    <p>Your health and fitness data never leaves your device. Diagnostic logs stored on your device (described in Section 6) record only broad ranges (e.g. "1-5k steps," "300-500 cal") rather than exact values &mdash; even if you share logs with the developer for bug reports, your actual activity levels are never disclosed.</p>
+    <p>Health and fitness data is never included in the anonymous analytics described in this section. Diagnostic logs stored on your device (described in Section 6) record only broad ranges (e.g. "1-5k steps," "300-500 cal") rather than exact values &mdash; even if you share logs with the developer for bug reports, your actual activity levels are never disclosed. Any other transmission of health and fitness data is limited to optional social features you explicitly enable (see Section 1).</p>
 
     <h2>8. Children</h2>
     <p>Stepple is not directed at children under 13. As described throughout this policy, the app does not knowingly collect personal information from any user, including children.</p>
