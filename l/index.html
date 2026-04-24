@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stepple Leaderboard</title>
+  <meta name="description" content="Join a Stepple leaderboard and compete with your friends." />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .leaderboard-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+      background: linear-gradient(180deg, var(--color-hero-top), var(--color-hero-bottom));
+    }
+    .leaderboard-card {
+      background: var(--color-bg-white);
+      border-radius: 24px;
+      padding: 48px 32px;
+      max-width: 420px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+      text-align: center;
+    }
+    .leaderboard-card h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .leaderboard-card p.lead {
+      color: var(--color-text-muted);
+      margin-bottom: 32px;
+    }
+    .code-display {
+      font-family: "SF Mono", Menlo, Monaco, Consolas, monospace;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      background: var(--color-bg-alt);
+      border: 2px dashed var(--color-border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 8px;
+      user-select: all;
+    }
+    .copy-status {
+      font-size: 13px;
+      color: var(--color-text-light);
+      min-height: 20px;
+      margin-bottom: 24px;
+    }
+    .copy-status.success { color: hsl(140, 60%, 35%); }
+    .btn-primary-large {
+      display: inline-block;
+      background: var(--color-accent);
+      color: white;
+      font-weight: 600;
+      padding: 16px 32px;
+      border-radius: 12px;
+      font-size: 17px;
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .btn-primary-large:hover { background: var(--color-accent-hover); }
+    .btn-secondary-large {
+      display: inline-block;
+      background: transparent;
+      color: var(--color-accent);
+      font-weight: 600;
+      padding: 14px 32px;
+      border-radius: 12px;
+      font-size: 15px;
+      width: 100%;
+      border: 1.5px solid var(--color-border);
+      cursor: pointer;
+      text-align: center;
+    }
+    .btn-secondary-large:hover { border-color: var(--color-accent); }
+    .steps {
+      text-align: left;
+      margin-top: 24px;
+      padding: 20px;
+      background: var(--color-bg-alt);
+      border-radius: 12px;
+      font-size: 14px;
+      color: var(--color-text-muted);
+    }
+    .steps ol {
+      margin-left: 20px;
+      line-height: 1.8;
+    }
+    .invalid {
+      color: hsl(0, 65%, 45%);
+      font-size: 14px;
+    }
+    #appStoreButton { display: none; }
+    #openInAppButton { display: none; }
+    body.ios #openInAppButton { display: block; }
+    body.ios #appStoreButton { display: block; }
+  </style>
+</head>
+<body>
+  <main class="leaderboard-hero">
+    <div class="leaderboard-card">
+      <div id="validContent" style="display:none;">
+        <h1>You're invited to a leaderboard</h1>
+        <p class="lead">Use this code in Stepple to join and compete with friends.</p>
+
+        <div class="code-display" id="codeDisplay">----</div>
+        <div class="copy-status" id="copyStatus">&nbsp;</div>
+
+        <button class="btn-primary-large" id="openInAppButton" onclick="openInApp()">
+          Open in Stepple
+        </button>
+
+        <a class="btn-primary-large" id="appStoreButton" href="https://stepple.fit#download">
+          Get Stepple
+        </a>
+
+        <a class="btn-secondary-large" href="https://stepple.fit">
+          Learn more about Stepple
+        </a>
+
+        <div class="steps">
+          <strong>Already have Stepple?</strong>
+          <ol>
+            <li>Open Stepple</li>
+            <li>Go to Profile → Leaderboards</li>
+            <li>Tap the + button → Join by Code</li>
+            <li>Enter the code above and your display name</li>
+          </ol>
+        </div>
+      </div>
+
+      <div id="invalidContent" style="display:none;">
+        <h1>Invalid leaderboard link</h1>
+        <p class="lead">This link doesn't look right. Ask your friend to share it again.</p>
+        <a class="btn-primary-large" href="https://stepple.fit">Go to Stepple.fit</a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      // Extract code from path: /l/ABCDE-FGHJK or /l/ABCDEFGHJK
+      const path = window.location.pathname;
+      const match = path.match(/^\/l\/([A-Za-z0-9-]+)\/?$/);
+      const raw = match ? match[1] : null;
+
+      // Validate: 10 alphanumeric chars (ignoring hyphen), uppercase,
+      // using the confusion-free alphabet ABCDEFGHJKMNPQRSTUVWXYZ23456789
+      // (excludes 0/O/I/1/L). Same pattern as LeaderboardService.generateCode.
+      const cleaned = raw ? raw.replace(/-/g, '').toUpperCase() : '';
+      const isValid = /^[A-HJKMNP-Z2-9]{10}$/.test(cleaned);
+
+      if (!isValid) {
+        document.getElementById('invalidContent').style.display = 'block';
+        return;
+      }
+
+      const formatted = cleaned.slice(0, 5) + '-' + cleaned.slice(5);
+      document.getElementById('codeDisplay').textContent = formatted;
+      document.getElementById('validContent').style.display = 'block';
+
+      // iOS detection — only offers "Open in App" button and clipboard copy on iOS
+      const ua = navigator.userAgent || navigator.vendor || '';
+      const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+      if (isIOS) {
+        document.body.classList.add('ios');
+        // Auto-copy on iOS as a fallback for the "app not installed" flow
+        copyToClipboard(formatted, true);
+      }
+
+      // Expose for button handler
+      window.__stepple_code = formatted;
+    })();
+
+    function copyToClipboard(text, silent) {
+      const status = document.getElementById('copyStatus');
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          if (!silent) {
+            status.textContent = 'Copied to clipboard!';
+            status.className = 'copy-status success';
+          } else {
+            status.textContent = 'Code copied — paste it in the app.';
+            status.className = 'copy-status';
+          }
+        }).catch(() => {
+          status.textContent = 'Tap the code to select and copy.';
+        });
+      } else {
+        status.textContent = 'Tap the code to select and copy.';
+      }
+    }
+
+    function openInApp() {
+      // On iOS, navigating to the same URL retries the Universal Link.
+      // If the app is installed and the user hasn't dismissed to Safari,
+      // this re-opens the app. Otherwise Safari just reloads this page.
+      window.location.href = window.location.href;
+    }
+
+    document.getElementById('codeDisplay').addEventListener('click', function () {
+      if (window.__stepple_code) copyToClipboard(window.__stepple_code, false);
+    });
+  </script>
+</body>
+</html>

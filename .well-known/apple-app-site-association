@@ -7,7 +7,8 @@
           "8AG9SQW5U6.me.jdegrand.Stepple.dev"
         ],
         "components": [
-          { "/": "/r/*", "comment": "Referral deep link" }
+          { "/": "/r/*", "comment": "Referral deep link" },
+          { "/": "/l/*", "comment": "Leaderboard join deep link" }
         ]
       }
     ]
