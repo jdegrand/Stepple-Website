@@ -29,12 +29,18 @@
     <a href="/" class="legal-back">&larr; Back to Stepple</a>
 
     <h1>Analytics Processors</h1>
-    <p><strong>Last updated:</strong> April 20, 2026</p>
+    <p><strong>Last updated:</strong> April 27, 2026</p>
 
     <p>This page lists the third-party data processors currently used to handle the anonymous app-usage, engagement, and diagnostic data described in <a href="privacy.html">Section 7 of the Privacy Policy</a>.</p>
 
     <h2>Current Processors</h2>
-    <p><strong>None.</strong> The developer does not currently collect in-app usage data from users. Subscription lifecycle data from Apple's App Store Server Notifications service is processed by the developer directly on the developer's own server and is not shared with any third party.</p>
+    <ul>
+      <li>
+        <strong>PostHog</strong> &mdash; product analytics. Receives anonymous events about how the app is used (screen views, feature usage, onboarding progress, paywall interactions, subscription lifecycle events, retention milestones, error and performance diagnostics). Each event is keyed to a random identifier generated on your device. <strong>No health or fitness values are ever sent. No pet names, leaderboard names, or other free-text user input are ever sent. No name, email, Apple ID, or iCloud user ID are ever sent.</strong> IP-based geolocation is disabled. Data is hosted in the United States. PostHog acts as a data processor under the developer's instructions. See <a href="https://posthog.com/privacy">posthog.com/privacy</a> for PostHog's privacy practices.
+      </li>
+    </ul>
+
+    <p>Subscription lifecycle data from Apple's App Store Server Notifications service is processed by the developer directly on the developer's own server and is not shared with any third party.</p>
 
     <h2>Changes to This List</h2>
     <p>This page will be updated whenever processors are added, removed, or changed. The categories of data collected, the anonymous identifier scheme, and the commitments described in the Privacy Policy do not change when this list does.</p>
