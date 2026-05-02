@@ -79,21 +79,21 @@
     <p>Stepple automatically saves signed backup files to your device's local storage after each daily sync, retaining only the most recent few. These files never leave your device. Backups are cryptographically signed with a device-specific key derived from an anonymous token stored in your iCloud Key-Value Storage, which means a backup file could only be restored on devices that share the same iCloud account. The developer has no access to these files.</p>
 
     <h2>5. Subscription Data</h2>
-    <p>Stepple+ subscriptions are processed entirely by Apple via In-App Purchase. The developer may receive anonymized transaction receipts and anonymized subscription lifecycle notifications from Apple (for example: purchase, renewal, cancellation, refund) to verify entitlement and measure subscription performance. These contain Apple's anonymous transaction and product identifiers only. No name, email, or payment information is shared with the developer.</p>
+    <p>Stepple+ subscriptions are processed entirely by Apple via In-App Purchase. Subscription state (whether you currently have an active Stepple+ subscription) is read on-device through Apple's StoreKit framework. No name, email, or payment information is shared with the developer.</p>
 
     <h2>6. Diagnostic Logs</h2>
-    <p>Stepple writes diagnostic logs to your device to help troubleshoot bugs. These logs describe app behavior but do not contain your actual step counts, calorie totals, sleep hours, workout details, or other health values. Your pet's name is also excluded from logs.</p>
+    <p>Stepple writes diagnostic logs to your device to help troubleshoot bugs. These logs describe app behavior but do not contain your actual step counts, calorie totals, sleep hours, workout details, or other health values. Your pet's name is replaced with a short opaque identifier so logs can be correlated for a single pet without revealing the name.</p>
     <p>Logs are kept for 7 days and then automatically deleted. Logs never leave your device automatically. The only way logs are shared is if you tap <strong>Settings &rarr; Report a Bug</strong> and explicitly choose to include them &mdash; they are then encrypted and attached to an email you send to the developer. Attaching logs is optional; you can send a bug report without them. The encrypted file can only be read by the developer.</p>
 
     <h2>7. Analytics and Advertising</h2>
-    <p>Stepple may send anonymous information about how the app is used &mdash; including, for example, which screens are viewed, which features are used, onboarding progress, paywall interactions, subscription lifecycle events, retention and engagement milestones, and error and performance diagnostics. This information helps the developer understand usage patterns, measure subscription conversions, diagnose problems, and improve the app.</p>
+    <p>Stepple may send anonymous information about how the app is used &mdash; including, for example, which features are used, which flows are completed, onboarding progress, paywall interactions, subscription lifecycle events, retention and engagement milestones, and error and performance diagnostics. This information helps the developer understand usage patterns, measure subscription conversions, diagnose problems, and improve the app.</p>
     <p>When such data is sent, it is tied only to a random identifier generated on your device and is not linked to your name, email, Apple ID, or health data. No health or fitness values are ever included. No pet names are ever included.</p>
     <p>This data may be processed directly by the developer or by third-party analytics, diagnostics, and paywall service providers acting as data processors under the developer's instructions. The current list of processors is maintained at <a href="processors.html">stepple.fit/processors</a>.</p>
     <p>Stepple does not use any advertising network, and no data described in this policy is used for advertising.</p>
     <p>Health and fitness data is never included in the anonymous analytics described in this section. Diagnostic logs stored on your device (described in Section 6) record only broad ranges (e.g. "1-5k steps," "300-500 cal") rather than exact values &mdash; even if you share logs with the developer for bug reports, your actual activity levels are never disclosed. Any other transmission of health and fitness data is limited to optional social features you explicitly enable (see Section 1).</p>
 
     <h2>8. Children</h2>
-    <p>Stepple is not directed at children under 13. As described throughout this policy, the app does not knowingly collect personal information from any user, including children.</p>
+    <p>As described throughout this policy, the app does not knowingly collect personal information from any user, including children.</p>
 
     <h2>9. Changes to This Policy</h2>
     <p>If this policy changes materially, the updated version will be posted at this URL with a new effective date. Continued use of the app after such changes constitutes acceptance of the updated policy.</p>
